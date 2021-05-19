@@ -4,12 +4,12 @@ using namespace std;
 
 long double fact(int N)
 {
-    if(N < 0) // если пользователь ввел отрицательное число
-        return 0; // возвращаем ноль
-    if (N == 0) // если пользователь ввел ноль,
-        return 1; // возвращаем факториал от нуля - не удивляетесь, но это 1 =)
-    else // Во всех остальных случаях
-        return N * fact(N - 1); // делаем рекурсию.
+    if(N < 0)
+        return 0;
+    if (N == 0)
+        return 1;
+    else
+        return N * fact(N - 1);
 }
 
 int main() {
@@ -26,8 +26,9 @@ int main() {
 	do {
 		f = i * cos(pow(i + x, 2))/fact(3*i + x);
 		sum = sum + f;
+		cout << "Значение элемента суммы №" << i << " : " << f << endl;
 		i++;
-	} while (i < amnt);
+	} while (i <= amnt);
 
 	cout << "Значение суммы " << amnt << " итераций: " << sum;
 }
